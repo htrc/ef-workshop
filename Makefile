@@ -22,3 +22,4 @@ $(name).html: $(name).ipynb
 clean:
 	rm -f $(name).{md,html,ipynb}
 	rm -rf $(name)_files
+	rm -f *.tex
