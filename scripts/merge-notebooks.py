@@ -28,6 +28,10 @@ def combine_scripts(paths):
     for path in paths[1:]:
         with open(path) as fp:
             nextf = json.load(fp)
+        # If first line of first cell starts with a special string,
+        # Remove that cell. Not pretty, but it works :)
+        if nextf['cells'][0]['source'][0][:11] == '# Preparing':
+            nextf['cells'] = nextf['cells'][1:]
         output['cells'].extend(nextf['cells'])
     return output
 

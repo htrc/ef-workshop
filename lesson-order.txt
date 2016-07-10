@@ -1,3 +1,7 @@
-'Introduction.ipynb'
-'HTRC Feature Reader Installation.ipynb'
-'Hello World.ipynb'
+01-Introduction.ipynb
+02-HTRC_Feature_Reader_Installation.ipynb
+03-Hello_World.ipynb
+04-Your_First_Features.ipynb
+05-Loading_a_Token_List.ipynb
+06-Working_with_DataFrames.ipynb
+07-More_Features_and_Conclusion.ipynb

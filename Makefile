@@ -1,4 +1,5 @@
 name=draft
+handoutname=Mining\ Texts\ with\ the\ Extracted\ Features\ Dataset
 LESSON=$(shell cat lesson-order.txt)
 
 files: $(name).ipynb
@@ -22,4 +23,14 @@ $(name).html: $(name).ipynb
 clean:
 	rm -f $(name).{md,html,ipynb}
 	rm -rf $(name)_files
-	rm -f *.tex
+	rm -f $(handoutname).{md,html,ipynb}
+	rm -rf $(handoutname)_files
+	rm -f *.{tex,out,log,aux}
+
+handout: $(name).ipynb
+	mv $(name).ipynb $(handoutname).ipynb
+	jupyter nbconvert $(handoutname).ipynb --to latex
+	pdflatex $(handoutname)
+	pdflatex $(handoutname)
+	pdflatex $(handoutname)
+	mv $(handoutname).pdf handouts/
