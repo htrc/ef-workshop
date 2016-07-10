@@ -9,6 +9,7 @@ files: $(name).ipynb
 	cp draft.ipynb lesson_files/examples/"Lesson Draft.ipynb"
 	cp -r data lesson_files/
 	cp -r images lesson_files/examples/
+	cp Within-Book\ Sentiment\ Trends.ipynb lesson_files/
 	zip -r lesson_files.zip lesson_files
 
 $(name).ipynb:
